@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="person-module.js"></script>
+</head>
+<body>
+  <div id="results"></div>
+  <script>
+    var person1 = new Person(personType.employee, 'Pedro');
+    var person2 = new Person(personType.normal, 'Pistol Pete');
+
+    var results = person1.answerPhone() +
+      '<br />' + person2.answerPhone();
+
+    document.getElementById('results').innerHTML = results;
+  </script>
+</body>
+</html>
