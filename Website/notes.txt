@@ -1,6 +1,9 @@
-This is a helper repo for an impromptu JS presentation I'll do at work:
-
-- Quick demo of the new keyword and enumerations
+- Very quick demo of the new keyword and enumerations
+  - single page for everything
+  - create the enum
+  - create an Employee function
+    - create an answerPhone method
+    - create a getTimesAnswered method
 
 - In POP
   - Show Jasmine tests. explain:

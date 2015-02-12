@@ -1,0 +1,42 @@
+<html>
+<body>
+
+  <div id="results"></div>
+
+  <script>
+
+    var employeeType = { engineer: 'asdfsdw', normal: 'qweqwe' };
+
+    var Employee = function(type) {
+
+      var answerCount = 0;
+
+      this.answerPhone = function() {
+        answerCount++;
+        if (type == employeeType.engineer) {
+          return 'What do you want?';
+        }
+        return '1800contacts how may I help you?';
+      };
+
+      this.getAnswerCount = function() {
+        return answerCount + ' times';
+      };
+
+    }
+
+    var employee1 = new Employee(employeeType.normal);
+    var employee2 = new Employee(employeeType.engineer);
+
+    var results = employee1.answerPhone()
+      + '<br />' + employee2.answerPhone()
+      + '<br />' + employee2.answerPhone()
+      + '<br />' + employee2.answerCount
+      + '<br />' + employee2.getAnswerCount()
+      + '<br />' + employee1.getAnswerCount();
+
+    document.getElementById('results').innerHTML = results;
+  </script>
+
+</body>
+</html>
