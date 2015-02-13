@@ -1,0 +1,40 @@
+<html>
+<body>
+
+  <div id="results"></div>
+
+  <script>
+    var employeeType = { developer: 'asdf', regular: 'oiuoiu'}
+
+    var Employee = function(type) {
+
+      var timesAnswered = 0;
+
+      this.answerPhone = function() {
+        timesAnswered++;
+        if (type == employeeType.developer) {
+          return "I'm busy, what do you want?";
+        }
+        return '1800contacts how may I help you?';
+      }
+
+      this.getTimesAnswered = function() {
+        return timesAnswered + 'times';
+      }
+      
+    }
+
+    var employee1 = new Employee(employeeType.regular);
+    var employee2 = new Employee(employeeType.developer);
+
+
+    var results = employee1.answerPhone()
+      + '<br />' + employee2.answerPhone()
+      + '<br />' + employee2.timesAnswered
+      + '<br />' + employee1.getTimesAnswered()
+      + '<br />' + employee2.getTimesAnswered();
+    document.getElementById('results').innerHTML = results;
+  </script>
+
+</body>
+</html>
