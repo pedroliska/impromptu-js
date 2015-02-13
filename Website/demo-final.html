@@ -1,0 +1,92 @@
+<html>
+<body>
+
+  <div id="results"></div>
+
+  <script>
+
+    var employeeType = { regular: 'sadfsadf', engineer: 'asdwerwerwe'};
+
+    var Employee1 = function(type) {
+      var timesAnswered = 0;
+      this.answerPhone = function() {
+        timesAnswered++;
+        if (type == employeeType.engineer)
+          return "I'm busy, what do you want?";
+
+        return '1800contacts how may I help you';
+      };
+      this.getTimesAnswered = function() {
+        return timesAnswered + ' times';
+      };
+    }
+    var employee2 = function(type) {
+      var self = {};
+      var timesAnswered = 0;
+      self.answerPhone = function() {
+        timesAnswered++;
+        if (type == employeeType.engineer)
+          return "I'm busy, what do you want?";
+
+        return '1800contacts how may I help you';
+      };
+      self.getTimesAnswered = function() {
+        return timesAnswered + ' times';
+      };
+      return self;
+    }
+
+    var employee3 = function (type) {
+      var timesAnswered = 0;
+      var answerPhone = function () {
+        timesAnswered++;
+        if (type == employeeType.engineer)
+          return "I'm busy, what do you want?";
+
+        return '1800contacts how may I help you';
+      };
+      var getTimesAnswered = function () {
+        return timesAnswered + ' times';
+      };
+      return {
+        answerPhone: answerPhone,
+        getTimesAnswered: getTimesAnswered
+      };
+    }
+
+
+    var Employee4 = {};
+    Employee4.prototype.constructor = function (type) {
+      this.type = type;
+    };
+    Employee4.prototype.timesAnswered = 0;
+    Employee4.prototype.answerPhone = function () {
+      timesAnswered++;
+      if (type == employeeType.engineer)
+        return "I'm busy, what do you want?";
+
+      return '1800contacts how may I help you';
+    };
+    Employee4.prototype.getTimesAnswered = function () {
+      return timesAnswered + ' times';
+    };
+
+    var Developer = Employee4;
+    Developer.prototype.salary = function() {};
+    var emp1 = employee3(employeeType.regular);
+    var emp2 = employee3(employeeType.engineer);
+
+    var emp4 = new Employee4();
+    emp4.answerPhone = function() {};
+
+
+    var results = emp1.answerPhone()
+      + '<br />' + emp2.answerPhone()
+      + '<br />' + emp2.answerPhone()
+      + '<br />' + emp1.getTimesAnswered()
+      + '<br />' + emp2.getTimesAnswered();
+    document.getElementById('results').innerHTML = results;
+  </script>
+
+</body>
+</html>
